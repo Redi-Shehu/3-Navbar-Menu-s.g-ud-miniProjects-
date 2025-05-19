@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: sans-serif;
+  background-color: #f1f5f8;
+  line-height: 2.2;
+}
+a,
+button,
+input[type="submit"] {
+  cursor: pointer;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.nav-main {
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-header i {
+  cursor: pointer;
+  font-size: 3rem;
+  color: #e94949;
+}
+.menu-list {
+  height: 0;
+  /* transform: scale(0); */
+  overflow: hidden;
+  transition: height 0.3s;
+  /* transition: transform 0.3s; */
+}
+/* height transition doesn't work with height auto */
+.menu-list.clicked {
+  height: 15rem;
+  /* transform: scale(1); */
+}
+.menu-list a {
+  color: gray;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+}
+.menu-list a:hover {
+  background-color: #f8a5a5;
+  color: #e94949;
+  padding-left: 1.5rem;
+}
+@media (min-width: 800px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-main {
+    /* max-width: 1170px;
+    margin: 0 auto; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-header {
+  }
+  .nav-header i {
+    display: none;
+  }
+  .menu-list {
+    height: auto;
+    display: flex;
+  }
+  .menu-list a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .menu-list a:hover {
+    padding: 0;
+    background: transparent;
+  }
+}
